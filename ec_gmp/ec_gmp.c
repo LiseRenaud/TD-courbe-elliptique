@@ -80,16 +80,30 @@ static inline void curve_set_str(ECCurve *E, const char *p_str, const char *a_st
 
 static int valid_elliptic_curve(const ECCurve *E) {
     mpz_t t1, t2, s;
+    //Déclaration variables entières 
     mpz_inits(t1, t2, s, NULL);
+    // initialisation des variables entières
     mpz_powm_ui(t1, E->a, 3, E->p);
+    // calcul t1 = a exposant 3 modulo p
     mpz_mul_ui(t1, t1, 4);
+    // met t1 = t1*4
     modp(t1, t1, E->p);
+    //met t1 = t1 modulo p
+    // si t1 inférieur à zéro alors on ajoute p à t1
     mpz_powm_ui(t2, E->b, 2, E->p);
+    //calcul t2 = b exposant 2 modulo p
     mpz_mul_ui(t2, t2, 27);
+    // met t2 = t2*27
     modp(t2, t2, E->p);
+    //met t1 = t2 modulo p
+    // si t2 inférieur à zéro alors on ajoute p à t2
     mpz_add(s, t1, t2);
+    // on initialise s = t1+t2
     modp(s, s, E->p);
+    //met s = s modulo p
+    // si s inférieur à zéro alors on ajoute p à s
     int valid = (mpz_cmp_ui(s, 0) != 0);
+    // si s est supérieur à 0 et différent de 0 alors valid vaut 1 sinon valid vaut 0
     return valid;
 }
 
@@ -159,8 +173,12 @@ static void point_add_distinct(const ECCurve *E, ECPoint *R, const ECPoint *P, c
          point_set_infinity(R);
          return;
      }
-
-     // TODO
+     else {
+        point_add(E,R,P,P);
+        // point_add teste les cas particuliers et si on n'y repond on lance point_add_distinct.
+        return;
+     }    
+     
 
  }
 

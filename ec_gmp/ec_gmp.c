@@ -94,42 +94,58 @@ static int valid_elliptic_curve(const ECCurve *E) {
 }
 
 static void point_add_distinct(const ECCurve *E, ECPoint *R, const ECPoint *P, const ECPoint *Q) {
+    /* Cette fonction réalise l’addition de deux points distincts :
+    P(xP​,yP​)
+    Q(xQ​,yQ​)*/
 
     mpz_t s, num, den, den_inv, tmp;
     mpz_inits(s, num, den, den_inv, tmp, NULL);
 
     // Bloc 1 : -------------------------------------
+    /* num=yQ​−yP​ puis réduction modulo p
+    --> numérateur de la pente de la droite passant par P et Q */
     mpz_sub(num, Q->y, P->y);
     modp(num, num, E->p);
     // ----------------------------------------------
 
     // Bloc 2 : -------------------------------------
+    /* den=xQ​−xP​ puis réduction modulo p
+    --> dénominateur de la pente */
     mpz_sub(den, Q->x, P->x);
     modp(den, den, E->p);
     // ----------------------------------------------
     
     // Bloc 3 : -------------------------------------
-    mpz_invert(den_inv, den, E->p);
+    /* calcul de la pente s=(yQ​−yP​)(xQ​−xP​)^−1 mod p
+    --> inverse modulaire */
+    mpz_invert(den_inv, den, E->p); // inverse modulaire
+    /* mpz_invert(r, a, p) calcule r=a^−1 mod p ( inverse modulaire de a mod p)
+    Condition : il faut que pgcd(a,p)=1, sinon l'inverse n'existe pas
+    Cette condition ne pose pas de problème car la fonction n'est appelée que quand les points sont distincts.
+    Les autres cas sont traités avec la fonction point_add */
     mpz_mul(s, num, den_inv);
     modp(s, s, E->p);
+    /* pente de la droite reliant P et Q */
     // ----------------------------------------------
 
     // Bloc 4 : -------------------------------------
-    mpz_mul(tmp, s, s);
-    modp(tmp, tmp, E->p);
-    mpz_sub(tmp, tmp, P->x);
+    /* calcul de la coordonnée x du point R */
+    mpz_mul(tmp, s, s); // tmp=s^2
+    modp(tmp, tmp, E->p); // xR​=s^2−xP​−xQ​
+    mpz_sub(tmp, tmp, P->x); // tmp=s^2−xP​−xQ​
     mpz_sub(tmp, tmp, Q->x);
     modp(tmp, tmp, E->p);
     mpz_set(R->x, tmp);
     // ----------------------------------------------
 
     // Bloc 5 : -------------------------------------
-    mpz_sub(tmp, P->x, R->x);
+    /* calcul de la coordonnée y du point R */
+    mpz_sub(tmp, P->x, R->x); // tmp=xP​−xR
     modp(tmp, tmp, E->p);
-    mpz_mul(tmp, s, tmp);
+    mpz_mul(tmp, s, tmp); // tmp=s(xP​−xR​)
     modp(tmp, tmp, E->p);
-    mpz_sub(tmp, tmp, P->y);
-    modp(tmp, tmp, E->p);
+    mpz_sub(tmp, tmp, P->y); // tmp=s(xP​−xR​)−yP​
+    modp(tmp, tmp, E->p); // yR​=s(xP​−xR​)−yP​
     mpz_set(R->y, tmp);
     R->infinity = 0;
     // ----------------------------------------------

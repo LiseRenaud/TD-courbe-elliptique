@@ -1,0 +1,207 @@
+Script started on 2026-03-11 15:27:19+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./bin/ex10gcc -std=c17 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -Wundef -O2 -g src/ex10.c -o bin/ex10 -lm[A[10P./bin/ex10
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kg[7mcc ec_gmp.c -o exec[27m[7m [27m[7m-lgmp[27m[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [Ccc ec_gmp.c -o exec -lgmp
+[?2004l[01m[Kec_gmp.c:[m[K In function ‘[01m[Kpoint_double[m[K’:
+[01m[Kec_gmp.c:177:9:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kpoint_add[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  177 |         [01;35m[Kpoint_add[m[K(E,R,P,P);
+      |         [01;35m[K^~~~~~~~~[m[K
+[01m[Kec_gmp.c:[m[K At top level:
+[01m[Kec_gmp.c:194:13:[m[K [01;35m[Kwarning: [m[Kconflicting types for ‘[01m[Kpoint_add[m[K’; have ‘[01m[Kvoid(const ECCurve *, ECPoint *, const ECPoint *, const ECPoint *)[m[K’
+  194 | static void [01;35m[Kpoint_add[m[K(const ECCurve *E, ECPoint *R, const ECPoint *P, const ECPoint *Q) {
+      |             [01;35m[K^~~~~~~~~[m[K
+[01m[Kec_gmp.c:194:13:[m[K [01;31m[Kerror: [m[Kstatic declaration of ‘[01m[Kpoint_add[m[K’ follows non-static declaration
+[01m[Kec_gmp.c:177:9:[m[K [01;36m[Knote: [m[Kprevious implicit declaration of ‘[01m[Kpoint_add[m[K’ with type ‘[01m[Kvoid(const ECCurve *, ECPoint *, const ECPoint *, const ECPoint *)[m[K’
+  177 |         [01;36m[Kpoint_add[m[K(E,R,P,P);
+      |         [01;36m[K^~~~~~~~~[m[K
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ gcc ec_gmp.c -o exec -lgmp
+[?2004l[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./exec
+[?2004lDonnez p a b (séparés par des espaces) : ^C
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ rm r[Kexec
+[?2004l[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ rm exec[1P./execgcc ec_gmp.c -o exec -lgmp[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -[1Plgmp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -l[1Pgmp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -lg[1Pmp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -lgm[1Pp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce -lgmp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc -lgmp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_ -lgmp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg -lgmpm -lgmp[Cp -lgmp[C[C
+[?2004l[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 23 1 4
+Donnez x et y de P séparés par des espaces : 3 6
+Donnez x et y de Q séparés par des espaces : 0 10
+P = (x=3, y=6)
+Q = (x=0, y=10)
+R = P + Q = (x=9, y=2)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 3
+Donnez x et y de Q séparés par des espaces : 1 3
+P = (x=1, y=3)
+Q = (x=1, y=3)
+Segmentation fault (core dumped)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 3
+Donnez x et y de Q séparés par des espaces : 1 4
+P = (x=1, y=3)
+Q = (x=1, y=4)
+R = P + Q = O (point à l'infini)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 4
+Donnez x et y de Q séparés par des espaces : 1 3
+P = (x=1, y=4)
+Q = (x=1, y=3)
+R = P + Q = O (point à l'infini)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces :   1 4
+Donnez x et y de Q séparés par des espaces : 1 4
+P = (x=1, y=4)
+Q = (x=1, y=4)
+Segmentation fault (core dumped)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 3
+Donnez x et y de Q séparés par des espaces : 2   4 2
+P = (x=1, y=3)
+Q = (x=4, y=2)
+R = P + Q = (x=6, y=1)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 3
+Donnez x et y de Q séparés par des espaces : 4 5
+P = (x=1, y=3)
+Q = (x=4, y=5)
+R = P + Q = (x=4, y=2)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 45    5
+Donnez x et y de Q séparés par des espaces : 1 3
+P = (x=4, y=5)
+Q = (x=1, y=3)
+R = P + Q = (x=4, y=2)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 3
+Donnez x et y de Q séparés par des espaces : 6 1
+P = (x=1, y=3)
+Q = (x=6, y=1)
+R = P + Q = (x=1, y=4)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 6 1  
+Donnez x et y de Q séparés par des espaces : 1 3
+P = (x=6, y=1)
+Q = (x=1, y=3)
+R = P + Q = (x=1, y=4)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 3
+Donnez x et y de Q séparés par des espaces : 6 6
+P = (x=1, y=3)
+Q = (x=6, y=6)
+R = P + Q = (x=4, y=5)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 4
+Donnez x et y de Q séparés par des espaces : 4 2
+P = (x=1, y=4)
+Q = (x=4, y=2)
+R = P + Q = (x=4, y=5)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 4
+Donnez x et y de Q séparés par des espaces : 1 4 5
+P = (x=1, y=4)
+Q = (x=4, y=5)
+R = P + Q = (x=6, y=6)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmpgcc ec_gmp.c -o ec_gmp -lgmp
+[?2004l[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ gcc ec_gmp.c -o ec_gmp -lgmp[A]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ [12P./ec_gmp
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 4
+Donnez x et y de Q séparés par des espaces : 6 1
+P = (x=1, y=4)
+Q = (x=6, y=1)
+R = P + Q = (x=4, y=2)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 4
+Donnez x et y de Q séparés par des espaces : 66  6
+P = (x=1, y=4)
+Q = (x=6, y=6)
+R = P + Q = (x=1, y=3)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 73    3 5
+Donnez x et y de P séparés par des espaces : 4 2
+Donnez x et y de Q séparés par des espaces : 5 4 5
+P = (x=4, y=2)
+Q = (x=4, y=5)
+R = P + Q = O (point à l'infini)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 4 2
+Donnez x et y de Q séparés par des espaces : 6 1
+P = (x=4, y=2)
+Q = (x=6, y=1)
+R = P + Q = (x=6, y=6)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 4 2
+Donnez x et y de Q séparés par des espaces : 6 6
+P = (x=4, y=2)
+Q = (x=6, y=6)
+R = P + Q = (x=1, y=4)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 4 5
+Donnez x et y de Q séparés par des espaces : 6 1
+P = (x=4, y=5)
+Q = (x=6, y=1)
+R = P + Q = (x=1, y=3)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 4 5
+Donnez x et y de Q séparés par des espaces : 6 6
+P = (x=4, y=5)
+Q = (x=6, y=6)
+R = P + Q = (x=6, y=1)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 6 1
+Donnez x et y de Q séparés par des espaces : 6 6
+P = (x=6, y=1)
+Q = (x=6, y=6)
+R = P + Q = O (point à l'infini)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 0 0
+Donnez x et y de Q séparés par des espaces : 1 3
+P = (x=0, y=0)
+Q = (x=1, y=3)
+R = P + Q = (x=1, y=4)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 1 3
+Donnez x et y de P séparés par des espaces : 00  0
+Donnez x et y de Q séparés par des espaces : 0 0
+P = (x=0, y=0)
+Q = (x=0, y=0)
+R = P + Q = O (point à l'infini)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 1 3
+Donnez x et y de P séparés par des espaces : 0 0
+Donnez x et y de Q séparés par des espaces : 4 6
+P = (x=0, y=0)
+Q = (x=4, y=6)
+R = P + Q = (x=0, y=0)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 1 4 3
+Donnez x et y de P séparés par des espaces :   4 6
+Donnez x et y de Q séparés par des espaces : 0 0
+P = (x=4, y=6)
+Q = (x=0, y=0)
+R = P + Q = (x=0, y=0)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : è 7 3 5
+Floating point exception (core dumped)
+[?2004h]0;matthias@XPS13MATT: /mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[01;32mmatthias@XPS13MATT[00m:[01;34m/mnt/c/Users/XboxM/Documents/repositories/Crypto_II/TD-courbe-elliptique/ec_gmp[00m$ ./ec_gmp
+[?2004lDonnez p a b (séparés par des espaces) : 7 3 5
+Donnez x et y de P séparés par des espaces : 1 3
+Donnez x et y de Q séparés par des espaces : 1 3
+P = (x=1, y=3)
+Q 

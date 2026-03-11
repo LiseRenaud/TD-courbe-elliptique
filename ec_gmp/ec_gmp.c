@@ -26,9 +26,6 @@ typedef struct {
     mpz_t b;
 } ECCurve;
 
-/* Prototype de point_add */
-static void point_add(const ECCurve *E, ECPoint *R,
-                      const ECPoint *P, const ECPoint *Q);
 
 static void modp(mpz_t r, const mpz_t x, const mpz_t p) {
     mpz_mod(r, x, p);

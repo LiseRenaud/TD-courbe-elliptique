@@ -173,13 +173,42 @@ static void point_add_distinct(const ECCurve *E, ECPoint *R, const ECPoint *P, c
          point_set_infinity(R);
          return;
      }
-     else {
-        point_add(E,R,P,P);
-        // point_add teste les cas particuliers et si on n'y repond on lance point_add_distinct.
-        return;
-     }    
-     
+    
+    mpz_t s, num, den, den_inv, tmp;
+    mpz_inits(s, num, den, den_inv, tmp, NULL);
 
+    /*comme Bloc1 précédent*/
+    mpz_mul(num, P->x, P->x);
+    mpz_mul_ui(num, num, 3);
+    mpz_add(num, num, E->a);
+    modp(num, num, E->p);
+
+    /*comme Bloc2 précédent*/
+    mpz_mul_ui(den, P->y, 2);
+    modp(den, den, E->p);
+
+    /* inverse modulaire */
+    mpz_invert(den_inv, den, E->p);
+
+    
+    mpz_mul(s, num, den_inv);
+    modp(s, s, E->p);
+
+    /* calcul de la coordonnée x du point R */
+    mpz_mul(tmp, s, s);
+    mpz_sub(tmp, tmp, P->x);
+    mpz_sub(tmp, tmp, P->x);
+    modp(tmp, tmp, E->p);
+    mpz_set(R->x, tmp);
+
+    /* calcul de la coordonnée y du point R */
+    mpz_sub(tmp, P->x, R->x);
+    mpz_mul(tmp, s, tmp);
+    mpz_sub(tmp, tmp, P->y);
+    modp(tmp, tmp, E->p);
+    mpz_set(R->y, tmp);
+
+    R->infinity = 0;
  }
 
 /* ============================================================
